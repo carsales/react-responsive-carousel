@@ -1,7 +1,7 @@
 var React = require('react/addons');
 var klass = require('../cssClasses');
 var outerWidth = require('../dimensions').outerWidth;
-var has3d = require('../has3d')();
+var has3d = require('../has3d');
 
 module.exports = React.createClass({
 	
@@ -172,7 +172,7 @@ module.exports = React.createClass({
 		var elementStyle = this.refs.itemList.getDOMNode().style;
 
 		// if 3d isn't available we will use left to move
-		if (has3d) {
+		if (has3d()) {
 			[
 				'WebkitTransform',
 				'MozTransform',
@@ -311,7 +311,7 @@ module.exports = React.createClass({
 		// hold the last position in the component context to calculate the delta on swiping
 		this.currentPosition = this.getNextPosition();
 
-		if (has3d) {
+		if (has3d()) {
 			// if 3d is available, let's take advantage of the performance of transform
 			var transformProp = 'translate3d(' + this.currentPosition + 'px, 0, 0)';
 			itemListStyles = {
