@@ -6,7 +6,7 @@
     "name": "Leandro Augusto Lemos",
     "url": "leandrowd@gmail.com"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
